@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, soluta dolor quasi necessitatibus qui explicabo accusamus praesentium expedita vero provident cum iste quibusdam doloremque architecto id! Repellendus praesentium eos quos.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam molestiae, reiciendis architecto debitis quibusdam temporibus vitae aliquid, explicabo perferendis inventore fugit itaque qui. Unde animi veniam nisi ducimus mollitia dolorum.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam error vero architecto dolores, illum facere laboriosam non deserunt eos earum sint! Maiores adipisci delectus eligendi reiciendis explicabo cum facere fugiat!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, asperiores. Perferendis reiciendis deserunt enim iste aperiam repellat, aliquam velit, dolor architecto molestiae earum, modi ratione alias in natus accusantium! Quasi?</p>
+
+    <button onclick="GetData()">Change</button>
+
+    <script>
+        var color = '#000';
+        var pixel  = '16px';
+        function GetData()
+        {
+            color = prompt("Enter a Color:");
+            pixel = prompt("Enter the Font Size in Pixels") + 'px';
+            var eles = document.getElementsByTagName('p');
+            for (var element of eles)
+            {
+                element.style.color = color;
+                element.style.fontSize = pixel;
+            }
+        }
+        
+    </script>
+</body>
+</html>
