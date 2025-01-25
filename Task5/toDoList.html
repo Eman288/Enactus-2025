@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="icon" href="icon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        * {
+            --sb-track-color: #8a5646;
+            --sb-thumb-color: #d3b997;
+            --sb-size: 10px;
+        }
+
+        *::-webkit-scrollbar {
+            width: var(--sb-size)
+        }
+
+        *::-webkit-scrollbar-track {
+            background: var(--sb-track-color);
+            border-radius: 3px;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background: var(--sb-thumb-color);
+            border-radius: 3px;
+        }
+
+        @supports not selector(::-webkit-scrollbar) {
+            * {
+                scrollbar-color: var(--sb-thumb-color)
+                                var(--sb-track-color);
+            }
+        }
+
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #d3b997;
+        }
+
+        .card {
+            background-color: #98604e;
+            min-height: 50%;
+            max-height: 80%;
+            width: 60vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #bd9c8e;
+            padding: 20px 0;
+            border: 1px solid transparent;
+            border-radius: 5px;
+        }
+
+        .card > div {
+            width: 80%;
+        }
+
+        .inputDiv {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        
+        .inputDiv input {
+            background-color: aliceblue;
+            padding: 10px;
+            outline: none;
+            border-radius: 10px;
+            color: #98604e;
+            width: 70%;
+        }
+
+        .inputDiv button {
+            border: 1px solid transparent;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 2px 2px #8a5646;
+            background-color: #e4ccae;
+            color: #8a5646;
+            cursor: pointer;
+        }
+
+        .inputDiv button:hover {
+            background-color: #d3b997;
+        }
+
+        #tasks {
+            background-color: #d3b997;
+            overflow-y: overlay;
+            border: 1px solid transparent;
+            border-radius: 5px;
+        }
+
+        #tasks > div {
+            border-bottom: 1px solid #8a5646;
+        }
+
+        #tasks div {
+            color: #98604e;
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+        }
+
+        #tasks p
+        {
+            max-width: 60%;
+            overflow-wrap: break-word;
+        }
+
+        #tasks > div div {
+            width: 30%;
+        }
+
+        #tasks div:hover {
+            background-color: #e4ccae;
+        }
+
+        #tasks button {
+            border: 1px solid transparent;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 2px 2px #c2a886;
+            cursor: pointer;
+            padding: 10px;
+            width: fit-content;
+            height: 40px;
+            color: #98604e;
+        }
+
+        #tasks button:hover {
+            background-color: #e4ccae;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h3><i>My To Do List</i></h3>
+        <div class="inputDiv">
+            <input class="taskInput" type="text" placeholder="Treat myself to coffee~☕">
+            <button onclick="CreateTask()">Create</button>
+        </div>
+        <div id="tasks">
+            <!--The tasks will appear here-->
+        </div>
+    </div>
+    <script>
+        let parent = document.getElementById('tasks');
+        let taskId = 0;
+        function CreateTask()
+        {
+             // get the value from the input
+            let taskText = document.getElementsByClassName('taskInput')[0];
+            if (taskText.value != "")
+            {
+                // create the new task
+                let newTask = document.createElement('div');
+                newTask.id = `div${taskId}`; // assign the ID to the <div>
+                newTask.innerHTML = `
+                    <p>${taskText.value}</p>
+                    <div>
+                        <button onclick="DeleteTask('div${taskId}')">Delete</button>
+                        <button onclick="EditTask('div${taskId}')">Edit</button>
+                    </div>
+                `;
+
+                // append the new task to the parent
+                parent.appendChild(newTask);
+
+                // reset the input container
+                taskText.value = "";
+                taskId += 1;
+            }
+        }
+
+        function DeleteTask(taskId)
+        {
+            // find the task by id
+            let task = document.getElementById(taskId);
+
+            if (task != null)
+            {
+                parent.removeChild(task);
+            }
+        }
+
+        function EditTask(taskId)
+        {
+            // find the task by id
+            let task = document.getElementById(taskId);
+
+            if (task != null)
+            {
+                let newText = prompt("Enter the new text");
+                task.innerHTML = `
+                    <p>${newText}</p>
+                    <div>
+                        <button onclick="DeleteTask('${taskId}')">Delete</button>
+                        <button onclick="EditTask('${taskId}')">Edit</button>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
