@@ -38,7 +38,7 @@ function updateCircleProgress(value, goal) {
     progressValue.innerText = value;
 }
 
-updateCircleProgress(5201, 8500);
+updateCircleProgress(6000, 8500);
 
 
 

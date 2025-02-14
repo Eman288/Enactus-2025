@@ -24,29 +24,28 @@ body {
     --sb-track-color: #261c22;
     --sb-thumb-color: var(--main-pink);
     --sb-size: 14px;
-  }
-  
-  *::-webkit-scrollbar {
+}
+
+*::-webkit-scrollbar {
     width: var(--sb-size)
-  }
-  
-  *::-webkit-scrollbar-track {
+}
+
+*::-webkit-scrollbar-track {
     background: var(--sb-track-color);
     border-radius: 3px;
-  }
-  
-  *::-webkit-scrollbar-thumb {
+}
+
+*::-webkit-scrollbar-thumb {
     background: var(--sb-thumb-color);
-    border-radius: 3px;
-    
-  }
-  
-  @supports not selector(::-webkit-scrollbar) {
+    border-radius: 3px;    
+}
+
+@supports not selector(::-webkit-scrollbar) {
     * {
-      scrollbar-color: var(--sb-thumb-color)
-                       var(--sb-track-color);
+        scrollbar-color: var(--sb-thumb-color)
+        var(--sb-track-color);
     }
-  }
+}
 
 * {
     transition: all .4s ease;
@@ -94,10 +93,15 @@ img {
     padding: 5px;
 }
 
-nav img:hover {
+.user {
+    border-radius: 50%;
+}
+
+.nav-col img:hover {
     background-color: var(--main-gray);
     border-radius: 45%;
     padding: 20px;
+    cursor: pointer;
 }
 
 /* Calendar Container */
@@ -136,6 +140,11 @@ nav img:hover {
     font-size: 14px;
     min-width: 30px;
     min-height: 30px;
+    cursor: pointer;
+}
+
+.day:hover {
+    background-color: gray;
 }
 
 .day.inactive {
@@ -368,8 +377,6 @@ section {
     fill: none;
     stroke: var(--main-orange); /* Progress color */
     stroke-width: 8;
-    stroke-dasharray: 188.4; /* Full circumference */
-    stroke-dashoffset: 122.46; /* Adjust based on progress */
     transition: stroke-dashoffset 1s ease-in-out;
 }
 
@@ -389,8 +396,8 @@ section {
 
 .progress-value {
     position: absolute;
-    bottom: 150%;
-    left: 171%;
+    bottom: 121%;
+    left: 163%;
     font-size: 36px;
     font-weight: bold;
     text-shadow: 2px 2px 2px black;
