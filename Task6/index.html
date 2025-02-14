@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="img/duck-removebg-preview.png">
+</head>
+<body>
+    <nav>
+        <div class="nav-top">
+            <img src="img/duck-removebg-preview.png" alt="logo">
+            <div class="big-col">
+                <div class="nav-col">
+                    <img src="img/home.png" alt="home">
+                    <img src="img/dashboard.png" alt="meter">
+                    <img src="img/chat.png" alt="chat">
+                    <img src="img/calendar.png" alt="calendar">
+                </div>
+                <div class="nav-col">
+                    <img src="img/notification.png" alt="notification">
+                    <img src="img/setting.png" alt="setting">
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav-col">
+            <img src="img/logout.png" alt="logout">
+            <img src="img/53987c50-d087-4f5a-ad86-c60a3bef94df.jpeg" alt="pic">
+        </div>
+    </nav>
+
+    <section>
+        <div class="info">
+            <div class="info-text">
+                <h2>Hi, Eman!</h2>
+                <p>You spent 35h screen time this week...</p>
+                <div class="motivate">
+                    <h4>Take your Time, Failure has been Always an Option✨</h4>
+                </div>
+            </div>
+            <div class="info-cycle">
+                <svg class="progress-ring" viewBox="0 0 100 100">
+                    <circle class="progress-ring-bg" cx="50" cy="50" r="30" stroke="lightgray" stroke-width="8" fill="none"></circle>
+                    <circle class="progress-ring-fill" cx="50" cy="50" r="30" stroke="#ff5722" stroke-width="8" fill="none" 
+                        stroke-dasharray="188.4" stroke-dashoffset="122.46"></circle>
+                </svg>
+            
+                <div class="progress-text">
+                    <span>Goal</span>
+                    <h2>8.500</h2>
+                    <span class="progress-value">5.201</span>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        <div class="calendar">
+            <div class="header">
+                <h3>June</h3>
+            </div>
+            <div class="days">
+                <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                <div class="day inactive">27</div>
+                <div class="day inactive">28</div>
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day active">6</div>
+                <div class="day">7</div>
+                <div class="day">8</div>
+                <div class="day">9</div>
+                <div class="day">10</div>
+                <div class="day scheduled">11</div>
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day">17</div>
+                <div class="day">18</div>
+                <div class="day">19</div>
+                <div class="day">20</div>
+                <div class="day">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <div class="day">29</div>
+                <div class="day">30</div>
+                <div class="day inactive">1</div>
+                <div class="day inactive">2</div>
+            </div>
+        </div>
+
+        <div class="weight">
+            <div class="weight-text">
+                <h1>My Habbits Progress🐥☕</h1>
+                <h5 id="habbit-text-precentage">0%<br>Completed</h5>
+            </div>
+            <div class="weight-meter">
+                <div class="progress-bar">
+                    <div class="progress" style="width: 68%;">
+                        <span class="progress-label">68%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="habits">
+            <form>
+                <input id="taskInput" type="text" placeholder="Enter your Habit..">
+                <button onclick="CreateHabit()">Add</button>
+            </form>
+            <div class="habbits" id="habbits">
+                <!--Habbits here-->
+                
+
+                
+            </div>
+        </div>
+    </section>
+
+    <script src="index.js"></script>
+</body>
+</html>
